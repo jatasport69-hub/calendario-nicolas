@@ -1,0 +1,390 @@
+/* ==========================================================
+   AGENDA WEB ESCOLAR 2026
+   COLEGIO PARTICULAR EVANGÉLICO "PRÍNCIPE DE PAZ"
+   Santa Cruz de la Sierra - Bolivia
+   ========================================================== */
+
+/* ==========================================================
+   1. CONFIGURACIÓN GENERAL Y FUENTES
+   ========================================================== */
+:root {
+    --azul: #0d3b66;
+    --azul-oscuro: #092b49;
+    --azul-claro: #2a6f97;
+    --celeste: #00b4d8;
+
+    --blanco: #ffffff;
+    --gris-fondo: #f5f7f9;
+    --gris-claro: #e8edf1;
+    --gris: #66717b;
+    --negro: #212529;
+
+    --verde: #2e7d65;
+    --dorado: #c9a227;
+
+    --radio: 8px;
+
+    --sombra: 0 4px 15px rgba(13, 59, 102, 0.10);
+    --sombra-hover: 0 10px 28px rgba(13, 59, 102, 0.18);
+
+    --transicion: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: var(--gris-fondo);
+    color: var(--negro);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    padding-left: 0;
+}
+
+/* ==========================================================
+   2. ENCABEZADO DEL COLEGIO
+   ========================================================== */
+header {
+    background: linear-gradient(135deg, var(--azul), var(--azul-oscuro));
+    color: var(--blanco);
+    text-align: center;
+    padding: 45px 20px 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decoraciones circulares de fondo */
+header::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(0, 180, 216, 0.10);
+    right: -100px;
+    top: -120px;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    left: -70px;
+    bottom: -90px;
+}
+
+/* Logo circular institucional */
+header img {
+    width: 115px;
+    height: 115px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+    padding: 8px;
+    border: 4px solid white;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.20);
+    transition: var(--transicion);
+}
+
+header img:hover {
+    transform: scale(1.05);
+}
+
+/* Nombre institucional y subtítulos */
+header h1 {
+    position: relative;
+    z-index: 2;
+    font-size: clamp(1.4rem, 4vw, 2.3rem);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+header p {
+    position: relative;
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.90);
+    font-size: 0.95rem;
+    margin: 3px 0;
+}
+
+header p:first-of-type {
+    color: #8eeaff;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================
+   3. MENÚ DE NAVEGACIÓN (Fijo arriba al hacer scroll)
+   ========================================================== */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--azul-oscuro);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+nav ul {
+    list-style: none;
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 7px 10px;
+    gap: 6px;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: var(--transicion);
+}
+
+nav li a:hover {
+    background: var(--celeste);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================
+   4. CONTENIDO PRINCIPAL Y TÍTULOS
+   ========================================================== */
+main {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 55px 0;
+}
+
+section {
+    margin-bottom: 70px;
+    scroll-margin-top: 80px; /* Evita que el menú fijo tape el título al hacer clic */
+}
+
+.titulo {
+    color: var(--azul);
+    text-align: center;
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 600;
+    margin-bottom: 35px;
+}
+
+.titulo::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    margin: 10px auto 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--azul-claro), var(--celeste));
+}
+
+/* Tarjeta de Bienvenida */
+.bienvenida {
+    background: white;
+    padding: 32px;
+    border-radius: var(--radio);
+    border: 1px solid var(--gris-claro);
+    border-left: 5px solid var(--azul-claro);
+    box-shadow: var(--sombra);
+    transition: var(--transicion);
+}
+
+.bienvenida:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-hover);
+}
+
+.bienvenida p {
+    color: var(--gris);
+    font-size: 0.95rem;
+    margin-bottom: 13px;
+}
+
+.bienvenida p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================================
+   5. CALENDARIO Y TARJETAS DE LOS MESES
+   ========================================================== */
+.calendario {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 30px;
+}
+
+.mes {
+    background: white;
+    border-radius: var(--radio);
+    overflow: hidden;
+    border: 1px solid var(--gris-claro);
+    box-shadow: var(--sombra);
+    transition: var(--transicion);
+}
+
+.mes:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-hover);
+    border-color: #bfd7e4;
+}
+
+.mes h3 {
+    background: linear-gradient(135deg, var(--azul), var(--azul-claro));
+    color: white;
+    text-align: center;
+    padding: 16px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Tablas internas de fechas */
+.mes table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.mes thead th {
+    background: #edf5f9;
+    color: var(--azul);
+    text-align: left;
+    padding: 12px 15px;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--gris-claro);
+}
+
+.mes tbody td {
+    padding: 14px 15px;
+    font-size: 0.88rem;
+    color: var(--gris);
+    vertical-align: top;
+    border-bottom: 1px solid #edf0f2;
+    transition: var(--transicion);
+}
+
+/* Columna de la Fecha */
+.mes tbody td:first-child {
+    width: 28%;
+    color: var(--azul-claro);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Indicador celeste en la fecha */
+.mes tbody td:first-child::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--celeste);
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Columna de la Descripción */
+.mes tbody td:last-child {
+    color: #4d5962;
+}
+
+.mes tbody tr:hover td {
+    background: #f2faff;
+}
+
+.mes tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ==========================================================
+   6. IDENTIFICADORES DE TIPOS DE ACTIVIDAD
+   ========================================================== */
+.actividad-academica {
+    border-left: 4px solid var(--azul-claro);
+}
+
+.actividad-civica {
+    border-left: 4px solid var(--dorado);
+}
+
+.actividad-deportiva {
+    border-left: 4px solid var(--verde);
+}
+
+.actividad-familiar {
+    border-left: 4px solid var(--celeste);
+}
+
+/* ==========================================================
+   7. RESPONSIVE DESIGN (Pantallas medianas y pequeñas)
+   ========================================================== */
+@media (max-width: 992px) {
+    .calendario {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    main {
+        padding: 35px 0;
+    }
+    
+    .calendario {
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    nav li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav li a {
+        padding: 8px 20px;
+    }
+
+    .mes tbody td {
+        padding: 12px 10px;
+        font-size: 0.82rem;
+    }
+}
